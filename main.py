@@ -8,8 +8,7 @@ station = 260
 st.title("Temperature and precipitation")
 st.sidebar.title("Selections")
 
-possible_stations = [209,
-                     210, 215, 225, 235, 240,
+possible_stations = [209, 210, 215, 225, 235, 240,
                      242, 248, 249, 251, 257, 258, 260, 265,
                      267, 269, 270, 273, 275, 277, 278, 279,
                      280, 283, 285, 286, 290, 308, 310, 311,
@@ -41,12 +40,12 @@ def plot_t_and_rh(station):
     data['RH'][data['RH'] < 0 ] = 0
     
     st.write(f"""
-             # Temperature at station {station}
+             ## Temperature at station {station} ({stations.name.values[0]})
              """)
              
     st.line_chart(data['T'])
     st.write(f"""
-             # Precipitation at station {station}
+             ## Precipitation at station {station} ({stations.name.values[0]})
              """)
     st.line_chart(data['RH'])
 
